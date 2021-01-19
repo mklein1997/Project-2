@@ -1,2 +1,3 @@
-# Project-2
-GTDA Project 2. Data visualizations paired with HTML navigation.
+# Analyzing MLB Player Data in Recent Seasons
+
+Using several components including Python, JS, SQL, Flask API, etc., import and clean datasets concerning MLB player statistics to present for analysis in a web-hosted dashboard.
