@@ -121,7 +121,7 @@ var marker = L.marker([44.981749, -93.278026
   title: "Target Field - Minnesota Twins"
 }).addTo(myMap);
 
-var marker = L.marker([39.756175,-104.99413
+var marker = L.marker([40.757134, -73.84584
 ], {
   draggable: false,
   title: "Citi Field - New York Mets"
