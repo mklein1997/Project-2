@@ -164,14 +164,14 @@ function makeResponsive() {
         var circle = elemEnter.append("circle")
             .attr("cx", d => xLinearScale(d[chosenXAxis]))
             .attr("cy", d => yLinearScale(d[chosenYAxis]))
-            .attr("r", 15)
+            .attr("r", 25)
             .classed("stateCircle", true);
         // Create circle text.
         var circleText = elemEnter.append("text")            
             .attr("x", d => xLinearScale(d[chosenXAxis]))
             .attr("y", d => yLinearScale(d[chosenYAxis]))
             .attr("dy", ".35em") 
-            .text(d => d.abbr)
+            .text(d => d.franchID)
             .classed("stateText", true);
         // Update tool tip function above csv import.
         var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circle, circleText);
