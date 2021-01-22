@@ -1,0 +1,412 @@
+function markerSize(wins) {
+  return wins / 1;
+}
+
+// Teams with total wins and world series wins
+var locations = [
+  {
+    coordinates: [33.80029, -117.882685],
+    total: {
+      name: "Anaheim Angels",
+      wins: 4735
+    },
+    Worldseries: {
+      name: "Anaheim Angels",
+      wins: 1
+    }
+  },
+  {
+    coordinates: [33.89127,-84.4681],
+    total: {
+      name: "Atlanta Braves",
+      wins: 10722
+    },
+    Worldseries: {
+      name: "Atlanta Braves",
+      wins: 1
+    }
+  },
+  {
+    coordinates: [39.283944,-76.621572],
+    total: {
+      name: "Baltimore Orioles",
+      wins: 8793
+    },
+    Worldseries: {
+      name: "Baltimore Orioles",
+      wins: 3
+    }
+  },
+  {
+    coordinates: [42.346561, -71.097337],
+    total: {
+      name: "Boston Red Sox",
+      wins: 9626
+    },
+    Worldseries: {
+      name: "Boston Red Sox",
+      wins: 9
+    }
+  },
+  {
+    coordinates: [41.948314, -87.655397],
+    total: {
+      name: "Chicago Cubs",
+      wins: 11016
+    },
+    Worldseries: {
+      name: "Chicago Cubs",
+      wins: 3
+    }
+  },
+  {
+    coordinates: [41.829892, -87.633703],
+    total: {
+      name: "Chicago White Sox",
+      wins: 9318
+    },
+    Worldseries: {
+      name: "Chicago White Sox",
+      wins: 3
+    }
+  },
+  {
+    coordinates: [39.097213, -84.506483],
+    total: {
+      name: "Cincinnati Reds",
+      wins: 10630
+    },
+    Worldseries: {
+      name: "Cincinnati Reds",
+      wins: 5
+    }
+  },
+  {
+    coordinates: [41.496005, -81.685326],
+    total: {
+      name: "Cleveland Indians",
+      wins: 9512
+    },
+    Worldseries: {
+      name: "Cleveland Indians",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [39.756175,-104.99413],
+    total: {
+      name: "Colorado Rockies",
+      wins: 2059
+    },
+    Worldseries: {
+      name: "Colorado Rockies",
+      wins: 0
+    }
+  },
+  {
+    coordinates: [42.339063,-83.048627],
+    total: {
+      name: "Detroit Tigers",
+      wins: 9346
+    },
+    Worldseries: {
+      name: "Detroit Tigers",
+      wins: 4
+    }
+  },
+  {
+    coordinates: [29.757041, -95.355429],
+    total: {
+      name: "Houston Astros",
+      wins: 4630
+    },
+    Worldseries: {
+      name: "Houston Astros",
+      wins: 1
+    }
+  },
+  {
+    coordinates: [39.05160, -94.480149],
+    total: {
+      name: "Kansas City Royals",
+      wins: 3927
+    },
+    Worldseries: {
+      name: "Kansas City Royals",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [34.073878, -118.239951],
+    total: {
+      name: "Los Angeles Dodgers",
+      wins: 11017
+      },
+    Worldseries: {
+      name: "Los Angeles Dodgers",
+      wins: 7
+      }
+  },
+  {
+    coordinates: [25.778165, -80.219541],
+    total: {
+      name: "Miami Marlins",
+      wins: 2021
+    },
+    Worldseries: {
+      name: "Miami Marlins",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [43.028232, -87.970966],
+    total: {
+      name: "Milwaukee Brewers",
+      wins: 3913
+    },
+    Worldseries: {
+      name: "Milwaukee Brewers",
+      wins: 0
+    }
+  },
+  {
+    coordinates: [44.981749, -93.278026],
+    total: {
+      name: "Minnesota Twins",
+      wins: 8939
+    },
+    Worldseries: {
+      name: "Minnesota Twins",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [40.757134, -73.84584],
+    total: {
+      name: "New York Mets",
+      wins: 4448
+    },
+    Worldseries: {
+      name: "New York Mets",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [40.829586, -73.926413],
+    total: {
+      name: "New York Yankees",
+      wins: 10378
+    },
+    Worldseries: {
+      name: "New York Yankees",
+      wins: 27
+    }
+  },
+  {
+    coordinates: [37.751619, -122.200451],
+    total: {
+      name: "Oakland A's",
+      wins: 9064
+    },
+    Worldseries: {
+      name: "Oakland A's",
+      wins: 4
+    }
+  },
+  {
+    coordinates: [39.906109, -75.166485],
+    total: {
+      name: "Philidelphia Phillies",
+      wins: 9825
+    },
+    Worldseries: {
+      name: "Philidelphia Phillies",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [33.44542,	-112.066793],
+    total: {
+      name: "Arizona Diamondbacks",
+      wins: 1788
+    },
+    Worldseries: {
+      name: "Arizona Diamondbacks",
+      wins: 1
+    }
+  },
+  {
+    coordinates: [40.44684, -80.005683],
+    total: {
+      name: "Pittsburgh Pirates",
+      wins: 10545
+    },
+    Worldseries: {
+      name: "Pittsburgh Pirates",
+      wins: 5
+    }
+  },
+  {
+    coordinates: [32.70753,	-117.157056],
+    total: {
+      name: "San Diego Padres",
+      wins: 3783
+    },
+    Worldseries: {
+      name: "San Diego Padres",
+      wins: 0
+    }
+  },
+  {
+    coordinates: [47.591443, -122.332283],
+    total: {
+      name: "Seattle Mariners",
+      wins: 3219
+    },
+    Worldseries: {
+      name: "Seattle Mariners",
+      wins: 0
+    }
+  },
+  {
+    coordinates: [37.778324, -122.389221],
+    total: {
+      name: "San Francisco Giants",
+      wins: 11194
+    },
+    Worldseries: {
+      name: "San Francisco Giants",
+      wins: 3
+    }
+  },
+  {
+    coordinates: [38.622622, -90.192841],
+    total: {
+      name: "St. Louis Cardinals",
+      wins: 10918
+    },
+    Worldseries: {
+      name: "St. Louis Cardinals",
+      wins: 11
+    }
+  },
+  {
+    coordinates: [27.768254, -82.653431],
+    total: {
+      name: "Tampa Bay Rays",
+      wins: 3415
+    },
+    Worldseries: {
+      name: "Tampa Bay Rays",
+      wins: 0
+    }
+  },
+  {
+    coordinates: [43.641256, -79.389054],
+    total: {
+      name: "Toronto Blue Jays",
+      wins: 1962
+    },
+    Worldseries: {
+      name: "Toronto Blue Jays",
+      wins: 2
+    }
+  },
+  {
+    coordinates: [38.872987, -77.007435],
+    total: {
+      name: "Washington Nationals",
+      wins: 4003
+    },
+    Worldseries: {
+      name: "Washington Nationals",
+      wins: 1
+    }
+  },
+  {
+    coordinates: [32.7510, -97.0830],
+    total: {
+      name: "Texas Rangers",
+      wins: 4522
+    },
+    Worldseries: {
+      name: "Texas Rangers",
+      wins: 1
+    }
+  }
+]; 
+
+var teammarkers1 = [];
+var teammarkers2 = [];
+
+// Loop through locations and create city and state markers
+for (var i = 0; i < locations.length; i++) {
+  // Setting the marker radius for the state by passing population into the markerSize function
+  teammarkers1.push(
+    L.circle(locations[i].coordinates, {
+      stroke: false,
+      fillOpacity: 0.75,
+      color: "white",
+      fillColor: "white",
+      radius: markerSize(locations[i].total.wins)
+    })
+  );
+  teammarkers2.push(
+    L.circle(locations[i].coordinates, {
+      stroke: false,
+      fillOpacity: 0.75,
+      color: "red",
+      fillColor: "red",
+      radius: markerSize(locations[i].Worldseries.wins)
+    })
+  );
+}
+// Create base layers
+
+// Streetmap Layer
+var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: API_KEY
+});
+  
+var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+  maxZoom: 18,
+  id: "dark-v10",
+  accessToken: API_KEY
+});
+  
+// Create two separate layer groups: one for cities and one for states
+var teams = L.layerGroup(teammarkers1);
+var teams = L.layerGroup(teammarkers2);
+  
+// Create a baseMaps object
+var baseMaps = {
+  "Street Map": streetmap,
+  "Dark Map": darkmap
+};
+
+// Create an overlay object
+var overlayMaps = {
+  "Total Wins": teams,
+  "World Series Wins": teams
+};
+  
+// Define a map object
+var myMap = L.map("map", {
+  center: [37.09, -95.71],
+  zoom: 5,
+  layers: [streetmap, teams, teams]
+});
+  
+// Pass our map layers into our layer control
+// Add the layer control to the map
+L.control.layers(baseMaps, overlayMaps, {
+  collapsed: false
+}).addTo(myMap);
+
+      
