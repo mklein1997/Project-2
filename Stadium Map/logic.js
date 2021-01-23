@@ -190,7 +190,13 @@ var marker = L.marker([27.768254, -82.653431
 var marker = L.marker([43.641256, -79.389054
 ], {
   draggable: false,
-  title: "Rogers Centre - Toronto Blue Rays"
+  title: "Rogers Centre - Toronto Blue Jays"
+}).addTo(myMap);
+
+var marker = L.marker([32.7510, -97.0830
+], {
+  draggable: false,
+  title: "Globe Life Park - Texas Rangers"
 }).addTo(myMap);
 
 var marker = L.marker([38.872987, -77.007435
