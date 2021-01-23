@@ -38,15 +38,18 @@ app = Flask(__name__)
 def home():
     return (
         f"Available Routes: <br/>"
-        f"/api/parks"
-        f"/api/teams"
-        f"/api/salaries"
-        f"/api/batting"
-        f"/api/college"
-        f"/api/hof"
-        f"/api/managers"
-        f"/api/college_details"
-        f"/api/players"
+        f"/api/parks<br/>"
+        f"/api/teams<br/>"
+        f"/api/salaries<br/>"
+        f"/api/batting<br/>"
+        f"/api/college<br/>"
+        f"/api/hof<br/>"
+        f"/api/managers<br/>"
+        f"/api/college_details<br/>"
+        f"/api/players<br/>"
+        f"/api/salhr_18<br/>"
+        f"/api/teamcaps<br/>"
+        f"/api/winpct"
     )
 
 @app.route("/api/parks")
@@ -58,6 +61,126 @@ def parks():
     session.close()
 
     result = parks.to_json(orient="records")
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/teams")
+def teams():
+    session = Session(engine)
+
+    teams = pd.read_sql_query("SELECT * FROM teams", con)
+
+    session.close()
+
+    result = teams.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/salaries")
+def salaries():
+    session = Session(engine)
+
+    salaries = pd.read_sql_query("SELECT * FROM salaries", con)
+
+    session.close()
+
+    result = salaries.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/batting")
+def batting():
+    session = Session(engine)
+
+    batting = pd.read_sql_query("SELECT * FROM batting", con)
+
+    session.close()
+
+    result = batting.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/college")
+def college():
+    session = Session(engine)
+
+    college = pd.read_sql_query("SELECT * FROM college", con)
+
+    session.close()
+
+    result = college.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/hof")
+def hof():
+    session = Session(engine)
+
+    hof = pd.read_sql_query("SELECT * FROM hof", con)
+
+    session.close()
+
+    result = hof.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/managers")
+def managers():
+    session = Session(engine)
+
+    managers = pd.read_sql_query("SELECT * FROM managers", con)
+
+    result = managers.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/college_details")
+def college_details():
+    session = Session(engine)
+
+    college_details = pd.read_sql_query("SELECT * FROM college_details", con)
+
+    result = college_details.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/players")
+def players():
+    session = Session(engine)
+
+    players = pd.read_sql_query("SELECT * FROM players", con)
+    
+    result = players.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/salhr_18")
+def salhr_18():
+    session = Session(engine)
+
+    salhr_18 = pd.read_sql_query("SELECT salaries.playerid, salaries.salary, batting.hr, batting.teamid FROM salaries JOIN batting ON salaries.playerid=batting.playerid WHERE batting.yearid = '2018'", con)
+
+    result = salhr_18.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/teamcaps")
+def teamcaps():
+    session = Session(engine)
+
+    team_cap18 = pd.read_sql_query("SELECT teamid, total_2018 FROM team_spending", con)
+
+    result = team_cap18.to_json(orient='records')
+    parsed = json.loads(result)
+    return jsonify(parsed)
+
+@app.route("/api/winpct")
+def winpct():
+    session = Session(engine)
+
+    team_wins = pd.read_sql_query("SELECT teamid, win_pct, total_2018 FROM team_spending", con)
+
+    result = team_wins.to_json(orient='records')
     parsed = json.loads(result)
     return jsonify(parsed)
 
