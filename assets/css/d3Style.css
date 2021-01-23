@@ -68,4 +68,10 @@
       font-size: 13px;
     }
   }
-  
+  .navbar{
+    position: absolute;
+    right: 30px;
+}
+
+.navbar a{
+    background-color: white;}

@@ -8,6 +8,15 @@
     position: relative;
     min-height: 100%;
   }
+
+  .navbar{
+    position: absolute;
+    right: 30px;
+}
+
+.navbar a{
+    background-color: white;
+}
   
   body {
     /* Padding bottom by footer height */

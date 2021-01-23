@@ -116,7 +116,7 @@ function xScale(csvData, chosenXAxis) {
       });
   
     circlesGroup.call(toolTip);
-  
+
     // mouseover event
     circlesGroup.on("mouseover", function(data) {
         toolTip.show(data, this);
