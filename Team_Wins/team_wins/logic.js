@@ -1,6 +1,14 @@
 function markerSize(wins) {
-  return wins / 1;
+  return wins * 20;
 }
+function markerSizews(ws) {
+  return ws * 10000;
+}
+function markerSizesalary(salary) {
+  return salary / 1000;
+}
+
+
 
 // Teams with total wins and world series wins
 var locations = [
@@ -13,7 +21,12 @@ var locations = [
     Worldseries: {
       name: "Anaheim Angels",
       wins: 1
+    },
+    totalsalary: {
+      name: "Anaheim Angels",
+      salary: 173717599
     }
+    
   },
   {
     coordinates: [33.89127,-84.4681],
@@ -23,7 +36,10 @@ var locations = [
     },
     Worldseries: {
       name: "Atlanta Braves",
-      wins: 1
+      wins: 1},
+    totalsalary: {
+      name: "Atlanta Braves",
+      salary: 130849395
     }
   },
   {
@@ -34,7 +50,10 @@ var locations = [
     },
     Worldseries: {
       name: "Baltimore Orioles",
-      wins: 3
+      wins: 3},
+    totalsalary: {
+      name: "Baltimore Orioles",
+      salary: 130413607
     }
   },
   {
@@ -45,7 +64,10 @@ var locations = [
     },
     Worldseries: {
       name: "Boston Red Sox",
-      wins: 9
+      wins: 9},
+    totalsalary: {
+      name: "Boston Red Sox",
+      salary: 227398860
     }
   },
   {
@@ -56,7 +78,10 @@ var locations = [
     },
     Worldseries: {
       name: "Chicago Cubs",
-      wins: 3
+      wins: 3},
+    totalsalary: {
+      name: "Chicago Cubs",
+      salary: 194259933
     }
   },
   {
@@ -67,7 +92,10 @@ var locations = [
     },
     Worldseries: {
       name: "Chicago White Sox",
-      wins: 3
+      wins: 3},
+    totalsalary: {
+      name: "Chicago White Sox",
+      salary: 71839808
     }
   },
   {
@@ -78,7 +106,10 @@ var locations = [
     },
     Worldseries: {
       name: "Cincinnati Reds",
-      wins: 5
+      wins: 5},
+    totalsalary: {
+      name: "Cincinnati Reds",
+      salary: 100305768
     }
   },
   {
@@ -89,7 +120,10 @@ var locations = [
     },
     Worldseries: {
       name: "Cleveland Indians",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Cleveland Indians",
+      salary: 143104703
     }
   },
   {
@@ -100,7 +134,10 @@ var locations = [
     },
     Worldseries: {
       name: "Colorado Rockies",
-      wins: 0
+      wins: 0},
+    totalsalary: {
+      name: "Colorado Rockies",
+      salary: 143968544
     }
   },
   {
@@ -111,7 +148,10 @@ var locations = [
     },
     Worldseries: {
       name: "Detroit Tigers",
-      wins: 4
+      wins: 4},
+    totalsalary: {
+      name: "Detroit Tigers",
+      salary: 130959889
     }
   },
   {
@@ -122,7 +162,10 @@ var locations = [
     },
     Worldseries: {
       name: "Houston Astros",
-      wins: 1
+      wins: 1},
+    totalsalary: {
+      name: "Houston Astros",
+      salary: 163524216
     }
   },
   {
@@ -133,7 +176,10 @@ var locations = [
     },
     Worldseries: {
       name: "Kansas City Royals",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Kansas City Royals",
+      salary: 129944821
     }
   },
   {
@@ -144,7 +190,10 @@ var locations = [
       },
     Worldseries: {
       name: "Los Angeles Dodgers",
-      wins: 7
+      wins: 7},
+    totalsalary: {
+      name: "Los Angeles Dodgers",
+      salary: 199582045
       }
   },
   {
@@ -155,7 +204,10 @@ var locations = [
     },
     Worldseries: {
       name: "Miami Marlins",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Miami Marlins",
+      salary: 91817860
     }
   },
   {
@@ -166,7 +218,10 @@ var locations = [
     },
     Worldseries: {
       name: "Milwaukee Brewers",
-      wins: 0
+      wins: 0},
+    totalsalary: {
+      name: "Milwaukee Brewers",
+      salary: 108982016
     }
   },
   {
@@ -177,7 +232,10 @@ var locations = [
     },
     Worldseries: {
       name: "Minnesota Twins",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Minnesota Twins",
+      salary: 115509520
     }
   },
   {
@@ -188,7 +246,10 @@ var locations = [
     },
     Worldseries: {
       name: "New York Mets",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "New York Mets",
+      salary: 150187987
     }
   },
   {
@@ -199,7 +260,10 @@ var locations = [
     },
     Worldseries: {
       name: "New York Yankees",
-      wins: 27
+      wins: 27},
+    totalsalary: {
+      name: "New York Yankees",
+      salary: 180098151
     }
   },
   {
@@ -210,7 +274,10 @@ var locations = [
     },
     Worldseries: {
       name: "Oakland A's",
-      wins: 4
+      wins: 4},
+    totalsalary: {
+      name: "Oakland A's",
+      salary: 80315288
     }
   },
   {
@@ -221,7 +288,10 @@ var locations = [
     },
     Worldseries: {
       name: "Philidelphia Phillies",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Philidelphia Phillies",
+      salary: 95778952
     }
   },
   {
@@ -232,7 +302,10 @@ var locations = [
     },
     Worldseries: {
       name: "Arizona Diamondbacks",
-      wins: 1
+      wins: 1},
+    totalsalary: {
+      name: "Arizona Diamondbacks",
+      salary: 143324597
     }
   },
   {
@@ -243,7 +316,10 @@ var locations = [
     },
     Worldseries: {
       name: "Pittsburgh Pirates",
-      wins: 5
+      wins: 5},
+    totalsalary: {
+      name: "Pittsburgh Pirates",
+      salary: 91025861
     }
   },
   {
@@ -254,7 +330,10 @@ var locations = [
     },
     Worldseries: {
       name: "San Diego Padres",
-      wins: 0
+      wins: 0},
+    totalsalary: {
+      name: "San Diego Padres",
+      salary: 103843635
     }
   },
   {
@@ -265,7 +344,10 @@ var locations = [
     },
     Worldseries: {
       name: "Seattle Mariners",
-      wins: 0
+      wins: 0},
+    totalsalary: {
+      name: "Seattle Mariners",
+      salary: 160993827
     }
   },
   {
@@ -276,7 +358,10 @@ var locations = [
     },
     Worldseries: {
       name: "San Francisco Giants",
-      wins: 3
+      wins: 3},
+    totalsalary: {
+      name: "San Francisco Giants",
+      salary: 205665348
     }
   },
   {
@@ -287,7 +372,10 @@ var locations = [
     },
     Worldseries: {
       name: "St. Louis Cardinals",
-      wins: 11
+      wins: 11},
+    totalsalary: {
+      name: "St. Louis Cardinals",
+      salary: 163784311
     }
   },
   {
@@ -298,7 +386,10 @@ var locations = [
     },
     Worldseries: {
       name: "Tampa Bay Rays",
-      wins: 0
+      wins: 0},
+    totalsalary: {
+      name: "Tampa Bay Rays",
+      salary: 68810167
     }
   },
   {
@@ -309,7 +400,10 @@ var locations = [
     },
     Worldseries: {
       name: "Toronto Blue Jays",
-      wins: 2
+      wins: 2},
+    totalsalary: {
+      name: "Toronto Blue Jays",
+      salary: 150946147
     }
   },
   {
@@ -320,7 +414,10 @@ var locations = [
     },
     Worldseries: {
       name: "Washington Nationals",
-      wins: 1
+      wins: 1},
+    totalsalary: {
+      name: "Washington Nationals",
+      salary: 181382609
     }
   },
   {
@@ -331,13 +428,17 @@ var locations = [
     },
     Worldseries: {
       name: "Texas Rangers",
-      wins: 1
+      wins: 1},
+    totalsalary: {
+      name: "Texas Rangers",
+      salary: 140625018
     }
   }
 ]; 
 
 var teammarkers1 = [];
 var teammarkers2 = [];
+var teammarkers3 = [];
 
 // Loop through locations and create city and state markers
 for (var i = 0; i < locations.length; i++) {
@@ -357,10 +458,22 @@ for (var i = 0; i < locations.length; i++) {
       fillOpacity: 0.75,
       color: "red",
       fillColor: "red",
-      radius: markerSize(locations[i].Worldseries.wins)
+      radius: markerSizews(locations[i].Worldseries.wins)
+    })
+  );
+  teammarkers3.push(
+    L.circle(locations[i].coordinates, {
+      stroke:false,
+      fillOpacity: 0.75,
+      color: "green",
+      fillColor: "green",
+      radius: markerSizesalary(locations[i].totalsalary.salary)
     })
   );
 }
+console.log(teammarkers1)
+console.log(teammarkers2)
+
 // Create base layers
 
 // Streetmap Layer
@@ -381,8 +494,9 @@ var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z
 });
   
 // Create two separate layer groups: one for cities and one for states
-var teams = L.layerGroup(teammarkers1);
-var teams = L.layerGroup(teammarkers2);
+var teams_wins = L.layerGroup(teammarkers1);
+var teams_ws = L.layerGroup(teammarkers2);
+var salary = L.layerGroup(teammarkers3);
   
 // Create a baseMaps object
 var baseMaps = {
@@ -392,15 +506,16 @@ var baseMaps = {
 
 // Create an overlay object
 var overlayMaps = {
-  "Total Wins": teams,
-  "World Series Wins": teams
+  "Total Wins": teams_wins,
+  "World Series Wins": teams_ws,
+  "Salaries": salary
 };
   
 // Define a map object
 var myMap = L.map("map", {
   center: [37.09, -95.71],
   zoom: 5,
-  layers: [streetmap, teams, teams]
+  layers: [streetmap, teams_wins, teams_ws]
 });
   
 // Pass our map layers into our layer control
