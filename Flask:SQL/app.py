@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from dotenv import load_dotenv
 from flask import Flask, jsonify
+import json
 
 # Database init
 db_name = 'MLB_db'
@@ -56,8 +57,9 @@ def parks():
 
     session.close()
 
-    return jsonify(parks)
-
+    result = parks.to_json(orient="records")
+    parsed = json.loads(result)
+    return jsonify(parsed)
 
 if __name__ == '__main__':
     app.run(debug=True)
