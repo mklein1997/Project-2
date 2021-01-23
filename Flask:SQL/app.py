@@ -47,3 +47,17 @@ def home():
         f"/api/college_details"
         f"/api/players"
     )
+
+@app.route("/api/parks")
+def parks():
+    session = Session(engine)
+
+    parks = pd.read_sql_query("SELECT * FROM parks", con)
+
+    session.close()
+
+    return jsonify(parks)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
