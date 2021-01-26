@@ -572,7 +572,7 @@ var baseMaps = {
 
 // Create an overlay object
 var overlayMaps = {
-  "Total 2018 Wins": teams_wins,
+  "Total Wins": teams_wins,
   "World Series Wins": teams_ws,
   "2018 Salaries": salary,
   "Team Locations": teamloc
