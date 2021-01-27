@@ -182,6 +182,8 @@ def winpct():
 
     result = team_wins.to_json(orient='records')
     parsed = json.loads(result)
+    with open("winpct.json", "w", encoding="UTF-8") as f:
+        json.dump(parsed, f, ensure_ascii=False, indent=4)
     return jsonify(parsed)
 
 if __name__ == '__main__':
