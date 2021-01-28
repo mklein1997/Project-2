@@ -15,3 +15,8 @@ The Flask app then serves the queries divided into routes for each chart. Each A
 
 Due to time constraints, the JSON object is then read using D3 and saved as a static file in the same directory as our Spending vs. Win Percentage chart. 
 The chart is then displayed using Plotly in JS.
+
+Data and Image Sources:
+Baseball statistics dataset: http://www.seanlahman.com/baseball-archive/statistics/
+MLB Salary Ranking Data: https://www.spotrac.com/mlb/rankings/2018/average/
+Use of MLB logo: https://www.psdcovers.com/major-league-baseball-team-vector-logos-eps-svg-psd/
