@@ -465,17 +465,10 @@ var locations = [
   }
 ];
 
-var myMap1 = L.map("map", {
-  center: [37.09, -95.71],
-  zoom: 5,
-  layers: [streetmap]
-  // , teams_wins, teams_ws]
-});
-
 var teammarkers1 = [];
 var teammarkers2 = [];
 var teammarkers3 = [];
-// var teammarkers4 = [];
+var teammarkers4 = [];
 
 // Loop through locations and create city and state markers
 for (var i = 0; i < locations.length; i++) {
@@ -507,15 +500,15 @@ for (var i = 0; i < locations.length; i++) {
       radius: markerSizesalary(locations[i].totalsalary.salary)
     })
   );
-  // teammarkers4.push(
-  //   L.marker(locations[i].coordinates, {
-  //     stroke: false,
-  //     fillOpacity: 0.75,
-  //     color: "blue",
-  //     fillColor: "blue",
-  //     radius: 20
-  //   })
-  // );
+  teammarkers4.push(
+    L.marker(locations[i].coordinates, {
+      stroke: false,
+      fillOpacity: 0.75,
+      color: "blue",
+      fillColor: "blue",
+      radius: 8
+    })
+  );
   console.log(teammarkers1)
   console.log(teammarkers2)
 
@@ -542,7 +535,7 @@ for (var i = 0; i < locations.length; i++) {
   var teams_wins = L.layerGroup(teammarkers1);
   var teams_ws = L.layerGroup(teammarkers2);
   var salary = L.layerGroup(teammarkers3);
-  // var teamloc = L.layerGroup(teammarkers4);
+  var teamloc = L.layerGroup(teammarkers4);
 
   // Create a baseMaps object
   var baseMaps = {
@@ -555,205 +548,204 @@ for (var i = 0; i < locations.length; i++) {
     "Total 2018 Wins": teams_wins,
     "World Series Wins": teams_ws,
     "2018 Salaries": salary,
-    // "Team Locations": teamloc
+    "Team Locations": teamloc
   };
 
   // Define a map object
-  // var myMap1 = L.map("map", {
-  //   center: [37.09, -95.71],
-  //   zoom: 5,
-  //   layers: [streetmap]
-  //   // , teams_wins, teams_ws]
-  // });
+  var myMap = L.map("map", {
+    center: [37.09, -95.71],
+    zoom: 5,
+    layers: [streetmap, teams_wins, teams_ws]
+  });
 
   // Pass our map layers into our layer control
   // Add the layer control to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
-  }).addTo(myMap1);
-
-  var marker = L.marker([33.80029
-    , -117.882685], {
-    draggable: false,
-    title: "Angel Stadium of Anaheim - Anaheim Angels"
-  }).addTo(myMap1);
-
-  var marker = L.marker([33.89127, -84.4681], {
-    draggable: false,
-    title: "SunTrust Park - Atlanta Braves"
-  }).addTo(myMap1);
-
-  var marker = L.marker([39.283944, -76.621572
-  ], {
-    draggable: false,
-    title: "Oriole Park at Camden Yards - Baltimore Orioles"
-  }).addTo(myMap1);
-
-  var marker = L.marker([42.346561, -71.097337
-  ], {
-    draggable: false,
-    title: "Fenway Park - Boston Red Sox"
-  }).addTo(myMap1);
-
-  var marker = L.marker([41.948314, -87.655397
-  ], {
-    draggable: false,
-    title: "Wrigley Field - Chicago Cubs"
-  }).addTo(myMap1);
-
-  var marker = L.marker([41.829892, -87.633703
-  ], {
-    draggable: false,
-    title: "Guarantee Rate Park - Chicago White Sox"
-  }).addTo(myMap1);
-
-  var marker = L.marker([39.097213, -84.506483
-  ], {
-    draggable: false,
-    title: "Great American Ballpark - Cincinnati Reds"
-  }).addTo(myMap1);
-
-  var marker = L.marker([41.496005, -81.685326
-  ], {
-    draggable: false,
-    title: "Progressive Field - Cleveland Indians"
-  }).addTo(myMap1);
-
-  var marker = L.marker([39.756175, -104.99413
-  ], {
-    draggable: false,
-    title: "Coors Field - Colorado Rockies"
-  }).addTo(myMap1);
-
-  var marker = L.marker([42.339063, -83.048627
-  ], {
-    draggable: false,
-    title: "Comerica Park - Detroit Tigers"
-  }).addTo(myMap1);
-
-  var marker = L.marker([29.757041, -95.355429
-  ], {
-    draggable: false,
-    title: "Minute Maid Park - Houston Astros"
-  }).addTo(myMap1);
-
-  var marker = L.marker([39.05160, -94.480149
-  ], {
-    draggable: false,
-    title: "Kauffman Stadium - Kansas City Royals "
-  }).addTo(myMap1);
-
-  var marker = L.marker([51.5365, -0.0098
-  ], {
-    draggable: false,
-    title: "Olympic Stadium MLB London Series- "
-  }).addTo(myMap1);
-
-  var marker = L.marker([34.073878, -118.239951
-  ], {
-    draggable: false,
-    title: "Dodger Stadium"
-  }).addTo(myMap1);
-
-  var marker = L.marker([25.778165, -80.219541
-  ], {
-    draggable: false,
-    title: "Miami Marlins Park"
-  }).addTo(myMap1);
-
-  var marker = L.marker([43.028232, -87.970966
-  ], {
-    draggable: false,
-    title: "Miller Park- Milwaukee Brewers"
-  }).addTo(myMap1);
-
-  var marker = L.marker([44.981749, -93.278026
-  ], {
-    draggable: false,
-    title: "Target Field - Minnesota Twins"
-  }).addTo(myMap1);
-
-  var marker = L.marker([40.757134, -73.84584
-  ], {
-    draggable: false,
-    title: "Citi Field - New York Mets"
-  }).addTo(myMap1);
-
-  var marker = L.marker([40.829586, -73.926413
-  ], {
-    draggable: false,
-    title: "Yankee Stadium - New York Yankees"
-  }).addTo(myMap1);
-
-  var marker = L.marker([37.751619, -122.200451
-  ], {
-    draggable: false,
-    title: "Oakland-Alameda County Coliseum - Oakland A's"
-  }).addTo(myMap1);
-
-  var marker = L.marker([39.906109, -75.166485
-  ], {
-    draggable: false,
-    title: "Citizens Bank Park - Philidelphia Phillies"
-  }).addTo(myMap1);
-
-  var marker = L.marker([33.44542, -112.066793
-  ], {
-    draggable: false,
-    title: "Chase Field - Arizona Diamondbacks"
-  }).addTo(myMap1);
-
-  var marker = L.marker([40.44684, -80.005683
-  ], {
-    draggable: false,
-    title: "PNC Park - Pittsburgh Pirates"
-  }).addTo(myMap1);
-
-  var marker = L.marker([32.70753, -117.157056
-  ], {
-    draggable: false,
-    title: "Petco Park - San Diego Padres"
-  }).addTo(myMap1);
-
-  var marker = L.marker([47.591443, -122.332283
-  ], {
-    draggable: false,
-    title: "T-Mobile Park - Seattle Mariners"
-  }).addTo(myMap1);
-
-  var marker = L.marker([37.778324, -122.389221
-  ], {
-    draggable: false,
-    title: "Oracle Park - San Francisco Giants"
-  }).addTo(myMap1);
-
-  var marker = L.marker([38.622622, -90.192841
-  ], {
-    draggable: false,
-    title: "Busch Stadium - St. Louis Cardinals"
-  }).addTo(myMap1);
-
-  var marker = L.marker([27.768254, -82.653431
-  ], {
-    draggable: false,
-    title: "Tropicana Field - Tampa Bay Rays"
-  }).addTo(myMap1);
-
-  var marker = L.marker([43.641256, -79.389054
-  ], {
-    draggable: false,
-    title: "Rogers Centre - Toronto Blue Jays"
-  }).addTo(myMap1);
-
-  var marker = L.marker([32.7510, -97.0830
-  ], {
-    draggable: false,
-    title: "Globe Life Park - Texas Rangers"
-  }).addTo(myMap1);
-
-  var marker = L.marker([38.872987, -77.007435
-  ], {
-    draggable: false,
-    title: "Nationals Park - Washington Nationals"
-  }).addTo(myMap1);
+  }).addTo(myMap);
 }
+//   var marker = L.marker([33.80029
+//     , -117.882685], {
+//     draggable: false,
+//     title: "Angel Stadium of Anaheim - Anaheim Angels"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([33.89127, -84.4681], {
+//     draggable: false,
+//     title: "SunTrust Park - Atlanta Braves"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([39.283944, -76.621572
+//   ], {
+//     draggable: false,
+//     title: "Oriole Park at Camden Yards - Baltimore Orioles"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([42.346561, -71.097337
+//   ], {
+//     draggable: false,
+//     title: "Fenway Park - Boston Red Sox"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([41.948314, -87.655397
+//   ], {
+//     draggable: false,
+//     title: "Wrigley Field - Chicago Cubs"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([41.829892, -87.633703
+//   ], {
+//     draggable: false,
+//     title: "Guarantee Rate Park - Chicago White Sox"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([39.097213, -84.506483
+//   ], {
+//     draggable: false,
+//     title: "Great American Ballpark - Cincinnati Reds"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([41.496005, -81.685326
+//   ], {
+//     draggable: false,
+//     title: "Progressive Field - Cleveland Indians"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([39.756175, -104.99413
+//   ], {
+//     draggable: false,
+//     title: "Coors Field - Colorado Rockies"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([42.339063, -83.048627
+//   ], {
+//     draggable: false,
+//     title: "Comerica Park - Detroit Tigers"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([29.757041, -95.355429
+//   ], {
+//     draggable: false,
+//     title: "Minute Maid Park - Houston Astros"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([39.05160, -94.480149
+//   ], {
+//     draggable: false,
+//     title: "Kauffman Stadium - Kansas City Royals "
+//   }).addTo(myMap);
+
+//   var marker = L.marker([51.5365, -0.0098
+//   ], {
+//     draggable: false,
+//     title: "Olympic Stadium MLB London Series- "
+//   }).addTo(myMap);
+
+//   var marker = L.marker([34.073878, -118.239951
+//   ], {
+//     draggable: false,
+//     title: "Dodger Stadium"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([25.778165, -80.219541
+//   ], {
+//     draggable: false,
+//     title: "Miami Marlins Park"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([43.028232, -87.970966
+//   ], {
+//     draggable: false,
+//     title: "Miller Park- Milwaukee Brewers"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([44.981749, -93.278026
+//   ], {
+//     draggable: false,
+//     title: "Target Field - Minnesota Twins"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([40.757134, -73.84584
+//   ], {
+//     draggable: false,
+//     title: "Citi Field - New York Mets"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([40.829586, -73.926413
+//   ], {
+//     draggable: false,
+//     title: "Yankee Stadium - New York Yankees"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([37.751619, -122.200451
+//   ], {
+//     draggable: false,
+//     title: "Oakland-Alameda County Coliseum - Oakland A's"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([39.906109, -75.166485
+//   ], {
+//     draggable: false,
+//     title: "Citizens Bank Park - Philidelphia Phillies"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([33.44542, -112.066793
+//   ], {
+//     draggable: false,
+//     title: "Chase Field - Arizona Diamondbacks"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([40.44684, -80.005683
+//   ], {
+//     draggable: false,
+//     title: "PNC Park - Pittsburgh Pirates"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([32.70753, -117.157056
+//   ], {
+//     draggable: false,
+//     title: "Petco Park - San Diego Padres"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([47.591443, -122.332283
+//   ], {
+//     draggable: false,
+//     title: "T-Mobile Park - Seattle Mariners"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([37.778324, -122.389221
+//   ], {
+//     draggable: false,
+//     title: "Oracle Park - San Francisco Giants"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([38.622622, -90.192841
+//   ], {
+//     draggable: false,
+//     title: "Busch Stadium - St. Louis Cardinals"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([27.768254, -82.653431
+//   ], {
+//     draggable: false,
+//     title: "Tropicana Field - Tampa Bay Rays"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([43.641256, -79.389054
+//   ], {
+//     draggable: false,
+//     title: "Rogers Centre - Toronto Blue Jays"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([32.7510, -97.0830
+//   ], {
+//     draggable: false,
+//     title: "Globe Life Park - Texas Rangers"
+//   }).addTo(myMap);
+
+//   var marker = L.marker([38.872987, -77.007435
+//   ], {
+//     draggable: false,
+//     title: "Nationals Park - Washington Nationals"
+//   }).addTo(myMap);
+// }
