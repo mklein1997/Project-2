@@ -55,7 +55,7 @@ img {
 
 h1, h2, h3{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: gray;
+    color: black;
 }
 
 h1{
@@ -150,5 +150,3 @@ body {
       padding: 5px;
       margin: 0px;
   }
-
-
