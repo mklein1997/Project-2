@@ -1,0 +1,157 @@
+[
+    {
+        "teamid": "ARI",
+        "win_pct": 0.506,
+        "total_2018": 143324597.0
+    },
+    {
+        "teamid": "ATL",
+        "win_pct": 0.556,
+        "total_2018": 130849395.0
+    },
+    {
+        "teamid": "BAL",
+        "win_pct": 0.291,
+        "total_2018": 130413607.0
+    },
+    {
+        "teamid": "BOS",
+        "win_pct": 0.667,
+        "total_2018": 227398860.0
+    },
+    {
+        "teamid": "CHC",
+        "win_pct": 0.583,
+        "total_2018": 194259933.0
+    },
+    {
+        "teamid": "CHW",
+        "win_pct": 0.383,
+        "total_2018": 71839808.0
+    },
+    {
+        "teamid": "CIN",
+        "win_pct": 0.414,
+        "total_2018": 100305768.0
+    },
+    {
+        "teamid": "CLE",
+        "win_pct": 0.562,
+        "total_2018": 143104703.0
+    },
+    {
+        "teamid": "COL",
+        "win_pct": 0.558,
+        "total_2018": 143968544.0
+    },
+    {
+        "teamid": "DET",
+        "win_pct": 0.395,
+        "total_2018": 130959889.0
+    },
+    {
+        "teamid": "HOU",
+        "win_pct": 0.636,
+        "total_2018": 163524216.0
+    },
+    {
+        "teamid": "KCR",
+        "win_pct": 0.358,
+        "total_2018": 129944821.0
+    },
+    {
+        "teamid": "ANA",
+        "win_pct": 0.494,
+        "total_2018": 173717599.0
+    },
+    {
+        "teamid": "LAD",
+        "win_pct": 0.564,
+        "total_2018": 199582045.0
+    },
+    {
+        "teamid": "FLA",
+        "win_pct": 0.391,
+        "total_2018": 91817860.0
+    },
+    {
+        "teamid": "MIL",
+        "win_pct": 0.589,
+        "total_2018": 108982016.0
+    },
+    {
+        "teamid": "MIN",
+        "win_pct": 0.481,
+        "total_2018": 115509520.0
+    },
+    {
+        "teamid": "NYM",
+        "win_pct": 0.475,
+        "total_2018": 150187987.0
+    },
+    {
+        "teamid": "NYY",
+        "win_pct": 0.617,
+        "total_2018": 180098151.0
+    },
+    {
+        "teamid": "OAK",
+        "win_pct": 0.599,
+        "total_2018": 80315288.0
+    },
+    {
+        "teamid": "PHI",
+        "win_pct": 0.494,
+        "total_2018": 95778952.0
+    },
+    {
+        "teamid": "PIT",
+        "win_pct": 0.509,
+        "total_2018": 91025861.0
+    },
+    {
+        "teamid": "SDP",
+        "win_pct": 0.407,
+        "total_2018": 103843635.0
+    },
+    {
+        "teamid": "SFG",
+        "win_pct": 0.451,
+        "total_2018": 205665348.0
+    },
+    {
+        "teamid": "SEA",
+        "win_pct": 0.549,
+        "total_2018": 160993827.0
+    },
+    {
+        "teamid": "STL",
+        "win_pct": 0.543,
+        "total_2018": 163784311.0
+    },
+    {
+        "teamid": "TBD",
+        "win_pct": 0.556,
+        "total_2018": 68810167.0
+    },
+    {
+        "teamid": "TEX",
+        "win_pct": 0.414,
+        "total_2018": 140625018.0
+    },
+    {
+        "teamid": "TOR",
+        "win_pct": 0.451,
+        "total_2018": 150946147.0
+    },
+    {
+        "teamid": "WSN",
+        "win_pct": 0.506,
+        "total_2018": 181382609.0
+    },
+    {
+        "teamid": null,
+        "win_pct": null,
+        "total_2018": null
+    }
+]
